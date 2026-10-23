@@ -1,0 +1,10 @@
+
+main:
+  - title: "Головна"
+    url: /
+
+  - title: "Публікації"
+    url: /publications/
+
+  - title: "Про проєкт"
+    url: /about/
