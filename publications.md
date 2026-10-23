@@ -4,9 +4,37 @@ title: "Публікації"
 permalink: /publications/
 ---
 
-На цій сторінці зібрано матеріали про військову техніку та озброєння: дослідження, аналітичні огляди, технічні нотатки та фотографії.
+На цій сторінці зібрано дослідження, аналітичні матеріали, технічні огляди, нотатки та фотографії, опубліковані в межах проєкту «Приціл».
 
 ---
+
+## Опубліковані матеріали
+
+{% assign publications = site.posts | sort: "date" | reverse %}
+
+{% if publications.size > 0 %}
+
+{% for post in publications %}
+
+### [{{ post.title }}]({{ post.url | relative_url }})
+
+{% if post.description %}
+{{ post.description }}
+{% elsif post.excerpt %}
+{{ post.excerpt | strip_html | truncatewords: 35 }}
+{% endif %}
+
+*Опубліковано: {{ post.date | date: "%d.%m.%Y" }}*
+
+---
+
+{% endfor %}
+
+{% else %}
+
+Поки що опублікованих матеріалів немає.
+
+{% endif %}
 
 ## Готуються до публікації
 
